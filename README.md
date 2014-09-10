@@ -1,0 +1,4 @@
+shotgun
+=======
+
+Shotgun Configuration Templates
