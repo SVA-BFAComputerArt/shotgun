@@ -25,6 +25,7 @@ engines:
 
   tk-shotgun:
     apps:
+      tk-multi-launchapp: '@launch_ae'
       tk-multi-launch3dsmax: '@launch_3dsmax'
       tk-multi-launchhiero: '@launch_hiero'
       tk-multi-launchmari: '@launch_mari'

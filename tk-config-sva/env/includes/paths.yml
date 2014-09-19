@@ -14,6 +14,14 @@
 #
 
 #
+# After Effects CC 2014
+#
+
+ae_mac: /Applications/Adobe After Effects CC 2014/Adobe After Effects CC 2014.app
+ae_windows: 'C:\Program Files\Adobe\Adobe After Effects CC 2014\Support Files\AfterFX.exe'
+ae_linux: ae
+
+#
 # Mari
 #
 mari_linux: 'Mari2.6'
@@ -28,6 +36,12 @@ maya_windows: 'C:\Program Files\Autodesk\Maya2015\bin\maya.exe'
 maya_mac: /Applications/Autodesk/maya2015/Maya.app
 maya_linux: maya
 
+#
+# Maya 2014
+#
+maya_windows2014: 'C:\Program Files\Autodesk\Maya2014\bin\maya.exe'
+maya_mac2014: /Applications/Autodesk/maya2014/Maya.app
+maya_linux2014: maya
 
 #
 # nuke
