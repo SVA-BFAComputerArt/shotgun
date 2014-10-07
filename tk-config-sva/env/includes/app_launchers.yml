@@ -219,3 +219,20 @@ launch_softimage:
   versions: []
   windows_args: ''
   windows_path: '@softimage_windows'
+  
+launch_uvlayout:
+  defer_keyword: ''
+  engine: ''
+  extra: {}
+  hook_app_launch: default
+  hook_before_app_launch: default
+  icon: ''
+  linux_args: ''
+  linux_path: ''
+  location: {name: tk-multi-launchapp, type: app_store, version: v0.4.0}
+  mac_args: ''
+  mac_path: ''
+  menu_name: Launch UVLayout
+  versions: []
+  windows_args: '-launch'
+  windows_path: 'C:\Program Files (x86)\headus UVLayout v2 Professional\howin32.exe'
