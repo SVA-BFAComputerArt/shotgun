@@ -4,4 +4,5 @@ Shotgun Pipeline Toolkit: Extended Project Configuration
 -------------------------------------------------------------------------
 
 - Custom file and folder structure
-- Extended pipeline steps for Visual Effects
+- Extended pipeline steps for Visual Effects/Live Action plates
+- Houdini support
