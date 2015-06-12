@@ -25,7 +25,6 @@ engines:
 
   tk-shotgun:
     apps:
-      tk-multi-launch3dsmax: '@launch_3dsmax'
       tk-multi-launchmaya: '@launch_maya'
       tk-multi-launchmotionbuilder: '@launch_motionbuilder'
       tk-multi-launchnuke: '@launch_nuke'
