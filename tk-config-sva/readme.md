@@ -5,4 +5,4 @@ Shotgun Pipeline Toolkit: Extended Project Configuration
 
 - Custom file and folder structure
 - Extended pipeline steps for Visual Effects
-- Additional launchers for Adobe After Effects, Maya 2014/2015 and UV Layout
+- Additional launchers for Adobe After Effects, Maya 2016 and UV Layout

@@ -5,4 +5,5 @@ Shotgun Pipeline Toolkit: Extended Project Configuration
 
 - Custom file and folder structure
 - Extended pipeline steps for Visual Effects/Live Action plates
-- Houdini support
+- Maya 2016 support
+- Launchers for Adobe After Effects and UV Layout
