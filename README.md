@@ -7,3 +7,4 @@ Shotgun Pipeline Toolkit: Extended Project Configuration
 - Extended pipeline steps for Visual Effects/Live Action plates
 - Maya 2016 support
 - Launchers for Adobe After Effects and UV Layout
+
