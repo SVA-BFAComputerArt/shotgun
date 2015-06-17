@@ -32,16 +32,16 @@ mari_windows: 'C:\Program Files\Mari2.6v2\Bundle\bin\Mari2.6v2.exe'
 #
 # Maya
 #
-maya_windows: 'C:\Program Files\Autodesk\Maya2015\bin\maya.exe'
-maya_mac: /Applications/Autodesk/maya2015/Maya.app
+maya_windows: 'C:\Program Files\Autodesk\Maya2016\bin\maya.exe'
+maya_mac: /Applications/Autodesk/maya2016/Maya.app
 maya_linux: maya
 
 #
-# Maya 2014
+# Maya 2015
 #
-maya_windows2014: 'C:\Program Files\Autodesk\Maya2014\bin\maya.exe'
-maya_mac2014: /Applications/Autodesk/maya2014/Maya.app
-maya_linux2014: maya
+maya_windows2015: 'C:\Program Files\Autodesk\Maya2015\bin\maya.exe'
+maya_mac2015: /Applications/Autodesk/maya2015/Maya.app
+maya_linux2015: maya
 
 #
 # nuke
