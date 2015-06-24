@@ -127,23 +127,7 @@ launch_maya:
   versions: []
   windows_args: ''
   windows_path: '@maya_windows'
-    
-launch_maya2014:
-  defer_keyword: ''
-  engine: tk-maya
-  extra: {}
-  hook_app_launch: default
-  hook_before_app_launch: default
-  icon: '{target_engine}/icon_256.png'
-  linux_args: ''
-  linux_path: '@maya_linux2014'
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.4.0}
-  mac_args: ''
-  mac_path: '@maya_mac2014'
-  menu_name: Launch Maya 2014
-  versions: []
-  windows_args: ''
-  windows_path: '@maya_windows2014'
+  
 launch_motionbuilder:
   defer_keyword: ''
   engine: tk-motionbuilder
@@ -160,7 +144,6 @@ launch_motionbuilder:
   versions: []
   windows_args: ''
   windows_path: '@motionbuilder_windows'
-  
 launch_nuke:
   defer_keyword: ''
   engine: tk-nuke
@@ -219,20 +202,3 @@ launch_softimage:
   versions: []
   windows_args: ''
   windows_path: '@softimage_windows'
-  
-launch_uvlayout:
-  defer_keyword: ''
-  engine: ''
-  extra: {}
-  hook_app_launch: default
-  hook_before_app_launch: default
-  icon: ''
-  linux_args: ''
-  linux_path: ''
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.4.0}
-  mac_args: ''
-  mac_path: ''
-  menu_name: Launch UVLayout
-  versions: []
-  windows_args: '-launch'
-  windows_path: 'C:\Program Files (x86)\headus UVLayout v2 Professional\howin32.exe'
