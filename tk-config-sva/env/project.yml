@@ -32,7 +32,6 @@ engines:
     
   tk-desktop:
     apps:
-      tk-multi-launch3dsmax: '@launch_3dsmax'
       tk-multi-launchhiero: '@launch_hiero'
       tk-multi-launchmari: '@launch_mari'
       tk-multi-launchmaya: '@launch_maya'
