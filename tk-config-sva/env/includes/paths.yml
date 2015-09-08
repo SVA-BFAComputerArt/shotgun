@@ -17,16 +17,17 @@
 # After Effects CC 2014
 #
 
-ae_mac: /Applications/Adobe After Effects CC 2014/Adobe After Effects CC 2014.app
-ae_windows: 'C:\Program Files\Adobe\Adobe After Effects CC 2014\Support Files\AfterFX.exe'
+ae_mac: '/Applications/Adobe After Effects CC 2015/Adobe After Effects CC 2015.app'
+ae_windows: 'C:\Program Files\Adobe\Adobe After Effects CC 2015\Support Files\AfterFX.exe'
 ae_linux: ae
 
 #
 # Mari
 #
-mari_linux: 'Mari2.6'
+mari_linux: /Applications/Mari2.6v5
 mari_mac: /Applications/Mari2.6v2
-mari_windows: 'C:\Program Files\Mari2.6v2\Bundle\bin\Mari2.6v2.exe'
+mari_windows: 'C:\Program Files\Mari2.6v5\Bundle\bin\Mari2.6v5.exe'
+
 
 
 #
@@ -46,60 +47,37 @@ maya_linux2015: maya
 #
 # nuke
 #
-nuke_mac: /Applications/Nuke8.0v5/Nuke8.0v5.app
-nuke_windows: 'C:\Program Files\Nuke8.0v5\Nuke8.0.exe'
+nuke_mac: '/Applications/Nuke9.0v7/Nuke9.0v7.app'
+nuke_windows: 'C:\Program Files\Nuke9.0v7\Nuke9.0.exe'
 nuke_linux: Nuke8.0
 
 
 #
 # motionbuilder
 #
-motionbuilder_windows: 'C:\Program Files\Autodesk\MotionBuilder 2014\bin\x64\motionbuilder.exe'
-
-
-#
-# 3dsmax 2012
-#
-3dsmax_windows: 'C:\Program Files\Autodesk\3ds Max 2012\3dsmax.exe'
+motionbuilder_windows: 'C:\Program Files\Autodesk\MotionBuilder 2016\bin\x64\motionbuilder.exe'
 
 
 #
 # Houdini
 #
-houdini_windows: 'C:\Program Files\Side Effects Software\Houdini 13.0.447\bin\houdini.exe'
-houdini_linux: '/opt/hfs13.0.498/bin/houdini'
-
-
-#
-# photoshop CS6
-#
-photoshop_mac: /Applications/Adobe Photoshop CS6/Adobe Photoshop CS6.app
-photoshop_win: 'C:\Program Files\Adobe\Adobe Photoshop CS6 (64 Bit)\Photoshop.exe'
-photoshop_extras:         
-    mac_extension_manager_path: /Applications/Adobe Extension Manager CS6/Adobe Extension Manager CS6.app
-    mac_python_path: /usr/bin/python
-    windows_extension_manager_path: 'C:\Program Files (x86)\Adobe\Adobe Extension Manager CS6\XManCommand.exe'
-    windows_python_path: 'C:\Python27\python.exe'
+houdini_mac: '/Applications/Houdini 14.0.395/Houdini.app’
+houdini_windows: 'C:\Program Files\Side Effects Software\Houdini 14.0.395\bin\houdini.exe'
+houdini_linux: /opt/hfs13.0.498/bin/houdini
 
 
 #
 # Hiero
 #
-hiero_mac: /Applications/Hiero1.8v2/Hiero1.8v2.app
-hiero_win: C:\Program Files\The Foundry\Hiero1.8v2\hiero.exe
+hiero_mac: '/Applications/Nuke9.0v7/Nuke9.0v7.app —-player'
+hiero_win: 'C:\Program Files\Nuke9.0v7\Nuke9.0.exe --player'
 hiero_linux: /usr/local/Hiero1.8v2/bin/Hiero1.8v2
 
-#
-# Softimage
-#
-
-softimage_windows: C:\Program Files\Autodesk\Softimage 2013\Application\bin\XSI.bat
-softimage_linux: XSI
 
 #
 # Tweak RV
 #
 rv_mac: /Applications/RV64.app
-rv_win: C:\Program Files\RV\RV64.exe
+rv_win: 'C:\Program Files\RV\RV64.exe'
 rv_linux: rv
 
