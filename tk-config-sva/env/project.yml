@@ -22,14 +22,6 @@ includes: [./includes/app_launchers.yml, ./includes/common_apps.yml]
 
 engines:
 
-  tk-3dsmax:
-    apps:
-      tk-multi-about: '@about'
-      tk-multi-screeningroom: '@launch_screeningroom'
-      tk-multi-workfiles: '@workfiles'
-    debug_logging: false
-    location: {name: tk-3dsmax, type: app_store, version: v0.3.2}
-    
   tk-desktop:
     apps:
       tk-multi-launchhiero: '@launch_hiero'
@@ -62,6 +54,8 @@ engines:
         hook_translate_template: default
         hook_update_version_data: default
         hook_upload_thumbnail: default
+        hook_get_extra_publish_data: default
+        hook_pre_export: default
         location: {name: tk-hiero-export, type: app_store, version: v0.1.22}
         nuke_script_published_file_type: Nuke Script
         nuke_script_toolkit_write_nodes:
@@ -69,6 +63,7 @@ engines:
         - {channel: stereoexr16, name: 'Stereo Exr, 16 bit'}
         - {channel: monodpx, name: Mono Dpx}
         plate_published_file_type: Hiero Plate
+        audio_published_file_type: Hiero Audio
         template_nuke_script_path: nuke_shot_work
         template_plate_path: hiero_plate_path
         template_render_path: hiero_render_path
@@ -201,10 +196,10 @@ engines:
       tk-multi-about: '@about'
       tk-multi-screeningroom: '@launch_screeningroom'
       tk-multi-workfiles: '@workfiles'
-    compatibility_dialog_min_version: 9
+    compatibility_dialog_min_version: 10
     debug_logging: false
     favourite_directories: []
-    location: {name: tk-nuke, type: app_store, version: v0.2.23}
+    location: {name: tk-nuke, type: app_store, version: v0.2.24}
     menu_favourites:
     - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
     project_favourite_name: Shotgun Current Project
@@ -216,7 +211,7 @@ engines:
       tk-multi-screeningroom: '@launch_screeningroom'
       tk-multi-workfiles: '@workfiles'
     debug_logging: false
-    location: {name: tk-photoshop, type: app_store, version: v0.2.0}
+    location: {name: tk-photoshop, type: app_store, version: v0.3.2}
     
   tk-shell:
     apps:
@@ -230,7 +225,6 @@ engines:
       tk-multi-launchsoftimage: '@launch_softimage'
       tk-multi-screeningroom: '@launch_screeningroom'
     location: {name: tk-shell, type: app_store, version: v0.4.0}
-    
     
 frameworks:
   tk-framework-adminui_v0.x.x:

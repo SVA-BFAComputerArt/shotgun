@@ -25,24 +25,6 @@ includes:
 ################################################################################################
 # app definitions for all the Sgtk app launchers.
 
-launch_ae: 
-  engine: ''
-  icon: ''
-  defer_keyword: ''
-  engine: ''
-  versions: []
-  extra: {} 
-  hook_app_launch: default 
-  hook_before_app_launch: default 
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.4.0} 
-  linux_args: '' 
-  linux_path: '' 
-  mac_args: '' 
-  mac_path: '@ae_mac' 
-  menu_name: Launch After Effects CC 2014 
-  windows_args: '' 
-  windows_path: '@ae_windows'
-
 launch_3dsmax:
   defer_keyword: ''
   engine: tk-3dsmax
@@ -52,10 +34,10 @@ launch_3dsmax:
   icon: '{target_engine}/icon_256.png'
   linux_args: ''
   linux_path: ''
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.4.0}
+  location: {name: tk-multi-launchapp, type: app_store, version: v0.5.4}
   mac_args: ''
   mac_path: ''
-  menu_name: Launch 3DSMax
+  menu_name: Launch 3ds Max
   versions: []
   windows_args: ''
   windows_path: '@3dsmax_windows'
@@ -144,6 +126,7 @@ launch_motionbuilder:
   versions: []
   windows_args: ''
   windows_path: '@motionbuilder_windows'
+  
 launch_nuke:
   defer_keyword: ''
   engine: tk-nuke
@@ -170,7 +153,7 @@ launch_photoshop:
   icon: '{target_engine}/icon_256.png'
   linux_args: ''
   linux_path: ''
-  location: {name: tk-multi-launchapp, type: app_store, version: v0.4.0}
+  location: {name: tk-multi-launchapp, type: app_store, version: v0.5.4}
   mac_args: ''
   mac_path: '@photoshop_mac'
   menu_name: Launch Photoshop
@@ -181,7 +164,7 @@ launch_photoshop:
 launch_screeningroom:
   enable_rv_mode: true
   enable_web_mode: true
-  location: {name: tk-multi-screeningroom, type: app_store, version: v0.1.9}
+  location: {name: tk-multi-screeningroom, type: app_store, version: v0.1.10}
   rv_path_linux: '@rv_linux'
   rv_path_mac: '@rv_mac'
   rv_path_windows: '@rv_win'

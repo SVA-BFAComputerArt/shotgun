@@ -30,7 +30,6 @@ engines:
       tk-multi-launchhiero: '@launch_hiero'
       tk-multi-launchhoudini: '@launch_houdini'
       tk-multi-launchmaya: '@launch_maya'
-      tk-multi-launchmotionbuilder: '@launch_motionbuilder'
       tk-multi-launchnuke: '@launch_nuke'
       tk-multi-launchphotoshop: '@launch_photoshop'
       tk-multi-screeningroom: '@launch_screeningroom'

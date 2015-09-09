@@ -1,10 +1,4 @@
--------------------------------------------------------------------------
-SVA BFA Computer Art, Computer Animation and Visual Effects
-Shotgun Pipeline Toolkit: Extended Project Configuration
--------------------------------------------------------------------------
+tk-config-site
+======================
 
-- Custom file and folder structure
-- Extended pipeline steps for Visual Effects/Live Action plates
-- Maya 2016 support
-- Launchers for Adobe After Effects and UV Layout
-
+A default configuration to use when outside of a project context.

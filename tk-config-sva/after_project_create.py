@@ -1,11 +1,11 @@
 # Copyright (c) 2013 Shotgun Software Inc.
-# 
+#
 # CONFIDENTIAL AND PROPRIETARY
-# 
-# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit 
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
 # Source Code License included in this distribution package. See LICENSE.
-# By accessing, using, copying or modifying this work you indicate your 
-# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights 
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
 # not expressly granted therein are reserved by Shotgun Software Inc.
 
 """
@@ -20,20 +20,12 @@ the following keyword arguments:
 * project_id - The shotgun project id that is being setup
 * log -        A logger instance to which progress can be reported via
                standard logger methods (info, warning, error etc)
-
 """
 
-def create(sg, project_id, log, **kwargs):
-    """
-    Insert post-project code here
-    """
-    pass
-	
-def create(sg, project_id, log, **kwargs):
-    """
-    Insert post-project code here
-    """
-    import sgtk
-    tk = sgtk.sgtk_from_entity("Project", project_id)
-    tk.create_filesystem_structure("Project", project_id)
 
+def create(sg, project_id, log, **kwargs):
+    """
+    Insert post-project code here
+    """
+    # the default site config does not require any post-session stuff.
+    pass
