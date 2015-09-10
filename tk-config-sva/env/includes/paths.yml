@@ -61,7 +61,7 @@ motionbuilder_windows: 'C:\Program Files\Autodesk\MotionBuilder 2016\bin\x64\mot
 #
 # Houdini
 #
-houdini_mac: '/Applications/Houdini 14.0.395/Houdini.app’
+houdini_mac: '/Applications/Houdini 14.0.395/Houdini.app'
 houdini_windows: 'C:\Program Files\Side Effects Software\Houdini 14.0.395\bin\houdini.exe'
 houdini_linux: /opt/hfs13.0.498/bin/houdini
 
@@ -69,7 +69,7 @@ houdini_linux: /opt/hfs13.0.498/bin/houdini
 #
 # Hiero
 #
-hiero_mac: '/Applications/Nuke9.0v7/Nuke9.0v7.app —-player'
+hiero_mac: '/Applications/Nuke9.0v7/Nuke9.0v7.app --player'
 hiero_win: 'C:\Program Files\Nuke9.0v7\Nuke9.0.exe --player'
 hiero_linux: /usr/local/Hiero1.8v2/bin/Hiero1.8v2
 
@@ -80,3 +80,17 @@ hiero_linux: /usr/local/Hiero1.8v2/bin/Hiero1.8v2
 rv_mac: /Applications/RV64.app
 rv_win: 'C:\Program Files\RV\RV64.exe'
 rv_linux: rv
+
+#
+# photoshop CS6
+#
+photoshop_mac: /Applications/Adobe Photoshop CS6/Adobe Photoshop CS6.app
+photoshop_win: 'C:\Program Files\Adobe\Adobe Photoshop CS6 (64 Bit)\Photoshop.exe'
+photoshop_extras:         
+    mac_extension_manager_path: /Applications/Adobe Extension Manager CS6/Adobe Extension Manager CS6.app
+    # An empty Python path will cause the engine to default to using the "current"
+    # Python that the engine is running in. This is often the best approach, as it
+    # should guarantee all necessary Python libraries are available.
+    mac_python_path: ''
+    windows_extension_manager_path: 'C:\Program Files (x86)\Adobe\Adobe Extension Manager CS6\XManCommand.exe'
+    windows_python_path: ''

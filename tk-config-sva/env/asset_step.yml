@@ -1,27 +1,5 @@
-# Copyright (c) 2013 Shotgun Software Inc.
-#
-# CONFIDENTIAL AND PROPRIETARY
-#
-# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
-# Source Code License included in this distribution package. See LICENSE.
-# By accessing, using, copying or modifying this work you indicate your
-# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
-# not expressly granted therein are reserved by Shotgun Software Inc.
-#
-
 description: Apps and Engines related to Asset based work.
-
-#################################################################################################
-# include common definitions for all the launchers that are used to start maya, nuke etc.
-
-includes: [./includes/app_launchers.yml, ./includes/common_apps.yml]
-
-#################################################################################################
-# define all the items that should appear in this environment
-
-
 engines:
-
   tk-houdini:
     apps:
       tk-multi-about: '@about'
@@ -37,7 +15,7 @@ engines:
         hook_secondary_pre_publish: default
         hook_secondary_publish: default
         hook_thumbnail: default
-        location: {name: tk-multi-publish, type: app_store, version: v0.6.2}
+        location: {name: tk-multi-publish, type: app_store, version: v0.6.10}
         primary_description: Publish and version up the current scene
         primary_display_name: Scene File Publish
         primary_icon: icons/publish_houdini_main.png
@@ -51,7 +29,7 @@ engines:
         hook_copy_file: default
         hook_scene_operation: default
         hook_thumbnail: default
-        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.0}
+        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.1}
         template_snapshot: houdini_asset_snapshot
         template_work: houdini_asset_work
       tk-multi-workfiles:
@@ -63,36 +41,38 @@ engines:
         hook_scene_operation: default
         launch_at_startup: false
         launch_change_work_area_at_startup: false
-        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.0}
+        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.15}
         saveas_default_name: scene
         saveas_prefer_version_up: false
         sg_entity_type_extra_display_fields: {}
         sg_entity_type_filters: {}
         sg_entity_types: []
+        sg_task_filters: []
         task_extra_display_fields: []
         template_publish: houdini_asset_publish
         template_publish_area: asset_publish_area_houdini
         template_work: houdini_asset_work
         template_work_area: asset_work_area_houdini
+        version_compare_ignore_fields: []
     debug_logging: false
-    location: {name: tk-houdini, type: app_store, version: v0.2.0}
+    location: {name: tk-houdini, type: app_store, version: v0.2.2}
     menu_favourites:
     - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
     - {app_instance: tk-multi-snapshot, name: Snapshot...}
     - {app_instance: tk-multi-workfiles, name: Shotgun Save As...}
     - {app_instance: tk-multi-publish, name: Publish...}
-    
   tk-mari:
     apps:
       tk-mari-projectmanager:
         default_project_name: Shotgun
         get_project_creation_args_hook: '{self}/get_project_creation_args.py'
-        location: {name: tk-mari-projectmanager, type: app_store, version: v1.0.0}
+        location: {name: tk-mari-projectmanager, type: app_store, version: v1.1.0}
+        publish_types: [Alembic Cache]
         template_new_project_name: mari_asset_project_name
       tk-multi-about: '@about'
       tk-multi-breakdown:
         hook_scene_operations: '{self}/tk-mari_scene_operations.py'
-        location: {name: tk-multi-breakdown, type: app_store, version: v1.1.1}
+        location: {name: tk-multi-breakdown, type: app_store, version: v1.3.1}
       tk-multi-loader2:
         action_mappings:
           Alembic Cache: [geometry_import]
@@ -113,7 +93,7 @@ engines:
           hierarchy: [entity, content]
           publish_filters: []
         filter_publishes_hook: '{self}/filter_publishes.py'
-        location: {name: tk-multi-loader2, type: app_store, version: v1.3.0}
+        location: {name: tk-multi-loader2, type: app_store, version: v1.7.1}
         menu_name: Load
         publish_filters: []
         title_name: Import
@@ -129,7 +109,7 @@ engines:
         hook_secondary_pre_publish: default
         hook_secondary_publish: default
         hook_thumbnail: default
-        location: {name: tk-multi-publish, type: app_store, version: v0.6.2}
+        location: {name: tk-multi-publish, type: app_store, version: v0.6.10}
         primary_description: Publish items from the current Mari project
         primary_display_name: Mari Publish
         primary_icon: icons/publish_mari_main.png
@@ -137,26 +117,14 @@ engines:
         primary_scene_item_type: work_file
         primary_tank_type: Mari Scene
         secondary_outputs:
-        - description: Publish flattened channels
-          display_group: Texture Channels
-          display_name: Channels
-          icon: 'icons/mari_channel_publish.png'
-          name: channel
-          publish_template: asset_mari_texture_tif
-          required: false
-          scene_item_type: channel
-          selected: false
-          tank_type: UDIM Image
-        - description: Publish individual layers for channels
-          display_group: Texture Channel Layers
-          display_name: Layers
-          icon: 'icons/mari_layer_publish.png'
-          name: layer
-          publish_template: asset_mari_texture_tif
-          required: false
-          scene_item_type: layer
-          selected: false
-          tank_type: UDIM Image
+        - {description: Publish flattened channels, display_group: Texture Channels,
+          display_name: Channels, icon: icons/mari_channel_publish.png, name: channel,
+          publish_template: asset_mari_texture_tif, required: false, scene_item_type: channel,
+          selected: false, tank_type: UDIM Image}
+        - {description: Publish individual layers for channels, display_group: Texture
+            Channel Layers, display_name: Layers, icon: icons/mari_layer_publish.png,
+          name: layer, publish_template: asset_mari_texture_tif, required: false,
+          scene_item_type: layer, selected: false, tank_type: UDIM Image}
         template_work: null
       tk-multi-workfiles:
         allow_task_creation: true
@@ -167,26 +135,28 @@ engines:
         hook_scene_operation: default
         launch_at_startup: false
         launch_change_work_area_at_startup: false
-        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.0}
+        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.15}
         saveas_default_name: scene
         saveas_prefer_version_up: false
         sg_entity_type_extra_display_fields: {}
         sg_entity_type_filters: {}
         sg_entity_types: [Asset]
+        sg_task_filters: []
         task_extra_display_fields: []
         template_publish: null
         template_publish_area: null
         template_work: null
         template_work_area: null
+        version_compare_ignore_fields: []
+    compatibility_dialog_min_version: 2
     debug_logging: false
-    location: {name: tk-mari, type: app_store, version: v1.0.0}
-    
+    location: {name: tk-mari, type: app_store, version: v1.0.2}
   tk-maya:
     apps:
+      tk-multi-about: '@about'
       tk-multi-breakdown:
         hook_scene_operations: '{self}/tk-maya_scene_operations.py'
-        location: {name: tk-multi-breakdown, type: app_store, version: v1.1.1}
-      tk-multi-about: '@about'
+        location: {name: tk-multi-breakdown, type: app_store, version: v1.3.1}
       tk-multi-loader2:
         action_mappings:
           Maya Scene: [reference, import]
@@ -213,7 +183,7 @@ engines:
           - [project, is, '{context.project}']
           hierarchy: [entity, content]
         filter_publishes_hook: '{self}/filter_publishes.py'
-        location: {name: tk-multi-loader2, type: app_store, version: v1.3.0}
+        location: {name: tk-multi-loader2, type: app_store, version: v1.7.1}
         menu_name: Load
         publish_filters: []
         title_name: Loader
@@ -229,7 +199,7 @@ engines:
         hook_secondary_pre_publish: default
         hook_secondary_publish: default
         hook_thumbnail: default
-        location: {name: tk-multi-publish, type: app_store, version: v0.6.2}
+        location: {name: tk-multi-publish, type: app_store, version: v0.6.10}
         primary_description: Publish and version up the current Maya scene
         primary_display_name: Maya Publish
         primary_icon: icons/publish_maya_main.png
@@ -237,23 +207,17 @@ engines:
         primary_scene_item_type: work_file
         primary_tank_type: Maya Scene
         secondary_outputs:
-        - description: Publish Alembic data for all geometry in the scene
-          display_group: Geometry Caches
-          display_name: Alembic Caches
-          icon: 'icons/alembic_cache_publish.png'
-          name: alembic_cache
-          publish_template: asset_alembic_cache
-          required: false
-          scene_item_type: geometry
-          selected: false
-          tank_type: Alembic Cache
+        - {description: Publish Alembic data for all geometry in the scene, display_group: Geometry
+            Caches, display_name: Alembic Caches, icon: icons/alembic_cache_publish.png,
+          name: alembic_cache, publish_template: asset_alembic_cache, required: false,
+          scene_item_type: geometry, selected: false, tank_type: Alembic Cache}
         template_work: maya_asset_work
       tk-multi-screeningroom: '@launch_screeningroom'
       tk-multi-snapshot:
         hook_copy_file: default
         hook_scene_operation: default
         hook_thumbnail: default
-        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.0}
+        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.1}
         template_snapshot: maya_asset_snapshot
         template_work: maya_asset_work
       tk-multi-workfiles:
@@ -265,20 +229,22 @@ engines:
         hook_scene_operation: default
         launch_at_startup: true
         launch_change_work_area_at_startup: false
-        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.0}
+        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.15}
         saveas_default_name: scene
         saveas_prefer_version_up: false
         sg_entity_type_extra_display_fields: {}
         sg_entity_type_filters: {}
         sg_entity_types: [Shot, Asset]
+        sg_task_filters: []
         task_extra_display_fields: []
         template_publish: maya_asset_publish
         template_publish_area: asset_publish_area_maya
         template_work: maya_asset_work
         template_work_area: asset_work_area_maya
+        version_compare_ignore_fields: []
     compatibility_dialog_min_version: 2015
     debug_logging: false
-    location: {name: tk-maya, type: app_store, version: v0.4.2}
+    location: {name: tk-maya, type: app_store, version: v0.5.1}
     menu_favourites:
     - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
     - {app_instance: tk-multi-snapshot, name: Snapshot...}
@@ -286,7 +252,6 @@ engines:
     - {app_instance: tk-multi-publish, name: Publish...}
     template_project: asset_work_area_maya
     use_sgtk_as_menu_name: false
-    
   tk-motionbuilder:
     apps:
       tk-multi-about: '@about'
@@ -313,7 +278,7 @@ engines:
           - [project, is, '{context.project}']
           hierarchy: [entity, content]
         filter_publishes_hook: '{self}/filter_publishes.py'
-        location: {name: tk-multi-loader2, type: app_store, version: v1.3.0}
+        location: {name: tk-multi-loader2, type: app_store, version: v1.7.1}
         menu_name: Load
         publish_filters: []
         title_name: Loader
@@ -329,7 +294,7 @@ engines:
         hook_secondary_pre_publish: default
         hook_secondary_publish: default
         hook_thumbnail: default
-        location: {name: tk-multi-publish, type: app_store, version: v0.6.2}
+        location: {name: tk-multi-publish, type: app_store, version: v0.6.10}
         primary_description: Publish and version up the current work file
         primary_display_name: Current Work File
         primary_icon: icons/publish_motionbuilder_main.png
@@ -348,7 +313,7 @@ engines:
         hook_copy_file: default
         hook_scene_operation: default
         hook_thumbnail: default
-        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.0}
+        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.1}
         template_snapshot: mobu_asset_snapshot
         template_work: mobu_asset_work
       tk-multi-workfiles:
@@ -360,17 +325,19 @@ engines:
         hook_scene_operation: default
         launch_at_startup: false
         launch_change_work_area_at_startup: false
-        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.0}
+        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.15}
         saveas_default_name: scene
         saveas_prefer_version_up: false
         sg_entity_type_extra_display_fields: {}
         sg_entity_type_filters: {}
         sg_entity_types: [Shot, Asset]
+        sg_task_filters: []
         task_extra_display_fields: []
         template_publish: mobu_asset_publish
         template_publish_area: asset_publish_area_mobu
         template_work: mobu_asset_work
         template_work_area: asset_work_area_mobu
+        version_compare_ignore_fields: []
     debug_logging: false
     location: {name: tk-motionbuilder, type: app_store, version: v0.3.0}
     menu_favourites:
@@ -379,10 +346,12 @@ engines:
     - {app_instance: tk-multi-workfiles, name: Shotgun Save As...}
     - {app_instance: tk-multi-publish, name: Publish...}
     use_sgtk_as_menu_name: false
-    
   tk-nuke:
     apps:
       tk-multi-about: '@about'
+      tk-multi-breakdown:
+        hook_scene_operations: '{self}/tk-nuke_scene_operations.py'
+        location: {name: tk-multi-breakdown, type: app_store, version: v1.3.1}
       tk-multi-loader2:
         action_mappings:
           Nuke Script: [script_import]
@@ -407,7 +376,7 @@ engines:
           - [project, is, '{context.project}']
           hierarchy: [entity, content]
         filter_publishes_hook: '{self}/filter_publishes.py'
-        location: {name: tk-multi-loader2, type: app_store, version: v1.3.0}
+        location: {name: tk-multi-loader2, type: app_store, version: v1.7.1}
         menu_name: Load
         publish_filters: []
         title_name: Loader
@@ -423,7 +392,7 @@ engines:
         hook_secondary_pre_publish: default
         hook_secondary_publish: default
         hook_thumbnail: default
-        location: {name: tk-multi-publish, type: app_store, version: v0.6.2}
+        location: {name: tk-multi-publish, type: app_store, version: v0.6.10}
         primary_description: Publishes and versions up the current Nuke script.
         primary_display_name: Nuke Publish
         primary_icon: icons/publish_nuke_main.png
@@ -442,7 +411,7 @@ engines:
           selected: true, tank_type: Quicktime}
         template_work: nuke_asset_work
       tk-multi-reviewsubmission:
-        location: {name: tk-multi-reviewsubmission, type: app_store, version: v0.1.9}
+        location: {name: tk-multi-reviewsubmission, type: app_store, version: v0.1.12}
         movie_height: 540
         movie_path_template: nuke_asset_render_movie
         movie_width: 1024
@@ -456,7 +425,7 @@ engines:
         hook_copy_file: default
         hook_scene_operation: default
         hook_thumbnail: default
-        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.0}
+        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.1}
         template_snapshot: nuke_asset_snapshot
         template_work: nuke_asset_work
       tk-multi-workfiles:
@@ -468,20 +437,19 @@ engines:
         hook_scene_operation: default
         launch_at_startup: false
         launch_change_work_area_at_startup: false
-        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.0}
+        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.15}
         saveas_default_name: scene
         saveas_prefer_version_up: false
         sg_entity_type_extra_display_fields: {}
         sg_entity_type_filters: {}
         sg_entity_types: [Shot, Asset]
+        sg_task_filters: []
         task_extra_display_fields: []
         template_publish: nuke_asset_publish
         template_publish_area: asset_publish_area_nuke
         template_work: nuke_asset_work
         template_work_area: asset_work_area_nuke
-      tk-multi-breakdown:
-        hook_scene_operations: '{self}/tk-nuke_scene_operations.py'
-        location: {name: tk-multi-breakdown, type: app_store, version: v1.1.1}
+        version_compare_ignore_fields: []
       tk-nuke-quickdailies:
         current_scene_template: nuke_asset_work
         height: 768
@@ -491,7 +459,7 @@ engines:
         sg_version_name_template: nuke_quick_asset_version_name
         width: 1024
       tk-nuke-writenode:
-        location: {name: tk-nuke-writenode, type: app_store, version: v1.0.10}
+        location: {name: tk-nuke-writenode, type: app_store, version: v1.0.15}
         template_script_work: nuke_asset_work
         write_nodes:
         - file_type: exr
@@ -506,7 +474,7 @@ engines:
     compatibility_dialog_min_version: 10
     debug_logging: false
     favourite_directories: []
-    location: {name: tk-nuke, type: app_store, version: v0.2.24}
+    location: {name: tk-nuke, type: app_store, version: v0.3.1}
     menu_favourites:
     - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
     - {app_instance: tk-multi-snapshot, name: Snapshot...}
@@ -514,7 +482,6 @@ engines:
     - {app_instance: tk-multi-publish, name: Publish...}
     project_favourite_name: Shotgun Current Project
     use_sgtk_as_menu_name: false
-    
   tk-photoshop:
     apps:
       tk-multi-about: '@about'
@@ -542,7 +509,7 @@ engines:
           - [project, is, '{context.project}']
           hierarchy: [entity, content]
         filter_publishes_hook: '{self}/filter_publishes.py'
-        location: {name: tk-multi-loader2, type: app_store, version: v1.4.0}
+        location: {name: tk-multi-loader2, type: app_store, version: v1.7.1}
         menu_name: Load
         publish_filters: []
         title_name: Loader
@@ -558,7 +525,7 @@ engines:
         hook_secondary_pre_publish: default
         hook_secondary_publish: default
         hook_thumbnail: default
-        location: {name: tk-multi-publish, type: app_store, version: v0.6.2}
+        location: {name: tk-multi-publish, type: app_store, version: v0.6.10}
         primary_description: Publish and version up the current Photoshop scene
         primary_display_name: Photoshop Publish
         primary_icon: icons/publish_photoshop_main.png
@@ -572,7 +539,7 @@ engines:
         hook_copy_file: default
         hook_scene_operation: default
         hook_thumbnail: default
-        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.0}
+        location: {name: tk-multi-snapshot, type: app_store, version: v0.4.1}
         template_snapshot: photoshop_asset_snapshot
         template_work: photoshop_asset_work
       tk-multi-workfiles:
@@ -584,33 +551,27 @@ engines:
         hook_scene_operation: default
         launch_at_startup: false
         launch_change_work_area_at_startup: false
-        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.0}
+        location: {name: tk-multi-workfiles, type: app_store, version: v0.6.15}
         saveas_default_name: scene
         saveas_prefer_version_up: false
         sg_entity_type_extra_display_fields: {}
         sg_entity_type_filters: {}
         sg_entity_types: [Shot, Asset]
+        sg_task_filters: []
         task_extra_display_fields: []
         template_publish: photoshop_asset_publish
         template_publish_area: asset_publish_area_photoshop
         template_work: photoshop_asset_work
         template_work_area: asset_work_area_photoshop
+        version_compare_ignore_fields: []
     debug_logging: false
     location: {name: tk-photoshop, type: app_store, version: v0.3.2}
-    
   tk-shell:
-    apps:
-      tk-multi-screeningroom: '@launch_screeningroom'
-      tk-multi-launch3dsmax: '@launch_3dsmax'
-      tk-multi-launchhoudini: '@launch_houdini'
-      tk-multi-launchmari: '@launch_mari'
-      tk-multi-launchmaya: '@launch_maya'
-      tk-multi-launchmotionbuilder: '@launch_motionbuilder'
-      tk-multi-launchnuke: '@launch_nuke'
-      tk-multi-launchphotoshop: '@launch_photoshop'
-      tk-multi-launchsoftimage: '@launch_softimage'
-    location: {name: tk-shell, type: app_store, version: v0.4.0}
-    
+    apps: {tk-multi-launchhoudini: '@launch_houdini', tk-multi-launchmari: '@launch_mari',
+      tk-multi-launchmaya: '@launch_maya', tk-multi-launchmotionbuilder: '@launch_motionbuilder',
+      tk-multi-launchnuke: '@launch_nuke', tk-multi-launchphotoshop: '@launch_photoshop',
+      tk-multi-screeningroom: '@launch_screeningroom'}
+    location: {name: tk-shell, type: app_store, version: v0.4.1}
 frameworks:
   tk-framework-shotgunutils_v1.x.x:
     location: {name: tk-framework-shotgunutils, type: app_store, version: v1.0.10}
@@ -624,3 +585,4 @@ frameworks:
     location: {name: tk-framework-widget, type: app_store, version: v0.1.19}
   tk-framework-widget_v0.1.22:
     location: {name: tk-framework-widget, type: app_store, version: v0.1.22}
+includes: [./includes/app_launchers.yml, ./includes/common_apps.yml]
